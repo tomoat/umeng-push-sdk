@@ -1,4 +1,4 @@
-# UmengNodeSDK
+# umeng-push-sdk
 Umeng push notification nodejs version.
 
 Using ES6
@@ -8,8 +8,8 @@ Using ES6
 customizedcast推送未完全
 ### Android Example
 **ATTENTION** 对照官方文档在info内添加自己所需要的信息,所提供为必须字段
-
-	var Umeng = require('UmengNode');
+```js
+	var Umeng = require('umeng-push');
 	var android = new Umeng();
 	android.initialize({
           platform: 'android',
@@ -34,11 +34,11 @@ customizedcast推送未完全
 	android.unicast(info, function (err, result) {
 		...//回调处理					
     });
-	
+```	
 ### iOS Example
 **ATTENTION** 对照官方文档在info内添加自己所需要的信息,所提供为必须字段
-
-	var Umeng = require('UmengNode');
+```js
+	var Umeng = require('umeng-push');
 	var ios = new Umeng();
 	ios.initialize({
         platform: 'ios',
@@ -50,17 +50,18 @@ customizedcast推送未完全
         timestamp: Date.now(),
         device_tokens: deviceToken,
         payload: {
-		aps": {"alert": '通知内容'}// 苹果必填字段
+		"aps": {"alert": '通知内容'} // 苹果必填字段
 		}
     };
 	//调用响应方法
 	ios.unicast(info, function (err, result) {
 		...//回调处理					
     });
+```
 ### fileUpload
 **文件上传接口**
-
-	var Umeng = require('UmengNode');
+```js
+	var Umeng = require('umeng-push');
 	var file = new Umeng();
 	file.initialize({
           appKey: config.umeng.android.appKey,
@@ -71,33 +72,35 @@ customizedcast推送未完全
 	file.fileupload(info,function(err,result){
 		...//回调处理
 	});
-	
+```	
 	返回结果
+```json
 	{
 		"ret":"SUCCESS/FAIL",
 		"data": 
 		{
 			// 当"ret"为"SUCCESS"时
-			"file_id":"xx" //再使用此file_id操作filecast
+			"file_id":"xx", //再使用此file_id操作filecast
 
 			// 当"ret"为"FAIL"时，包含参数如下:
 			"error_code": "xx" //错误码详见官方附录I。
 		}
 	}
+```
 ### Request callback(引用自官方)
-	
+```json	
 	{
 		"ret":"SUCCESS/FAIL", // 返回结果，"SUCCESS"或者"FAIL"
 		"data": 
 		{
-		// 当"ret"为"SUCCESS"时,包含如下参数:
-        // 当type为unicast、listcast或者customizedcast且alias不为空时:
-        "msg_id":"xx" 
-        // 当type为于broadcast、groupcast、filecast、customizedcast
-        且file_id不为空的情况(任务)
-        "task_id":"xx"
-		// 当"ret"为"FAIL"时,包含如下参数:
-		"error_code":"xx" // 错误码详见官方附录I。
+			// 当"ret"为"SUCCESS"时,包含如下参数:
+			// 当type为unicast、listcast或者customizedcast且alias不为空时:
+			"msg_id":"xx" ,
+			// 当type为于broadcast、groupcast、filecast、customizedcast 且file_id不为空的情况(任务)
+			"task_id":"xx",
+			// 当"ret"为"FAIL"时,包含如下参数:
+			"error_code":"xx" // 错误码详见官方附录I。
 		}  
 	}
-
+```
+Fork from [scarletmu/UmengNode](https://github.com/scarletmu/UmengNode)

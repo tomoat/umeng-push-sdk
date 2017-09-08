@@ -1,16 +1,16 @@
 /**
  * Created by Mu on 2015/9/22.
  */
-"use strict";
-var AndroidNotification = require('../AndroidNotification');
+'use strict'
+var AndroidNotification = require('../AndroidNotification')
 
 var AndroidFilecast = class AndroidFilecast extends AndroidNotification{
-  constructor(){
-    super();
+    constructor(){
+        super()
 
-    this._data['type'] = 'filecast';
-    this._data['file_id'] = '';
-  }
-};
+        this._data['type'] = 'filecast'
+        this._data['file_id'] = ''
+    }
+}
 
-module.exports = AndroidFilecast;
+module.exports = AndroidFilecast

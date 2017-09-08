@@ -1,4 +1,4 @@
 /**
- * Created by Mu on 2015/9/22.
+ * 加载主体文件.
  */
-module.exports = require('./src/Umeng');
+module.exports = require('./src/Umeng')

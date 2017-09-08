@@ -1,12 +1,12 @@
-"use strict";
-var iOSNotification = require('../iOSNotification');
+'use strict'
+var iOSNotification = require('../iOSNotification')
 
 var iOSBroadcast = class iOSBroadcast extends iOSNotification{
-  constructor(){
-    super();
+    constructor(){
+        super()
 
-    this._data['type'] = 'broadcast';
-  }
-};
+        this._data['type'] = 'broadcast'
+    }
+}
 
-module.exports = iOSBroadcast;
+module.exports = iOSBroadcast

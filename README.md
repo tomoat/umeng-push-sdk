@@ -74,7 +74,7 @@ customizedcast推送未完全
 	});
 ```	
 	返回结果
-```json
+```js
 	{
 		"ret":"SUCCESS/FAIL",
 		"data": 
@@ -88,7 +88,7 @@ customizedcast推送未完全
 	}
 ```
 ### Request callback(引用自官方)
-```json	
+```js
 	{
 		"ret":"SUCCESS/FAIL", // 返回结果，"SUCCESS"或者"FAIL"
 		"data": 

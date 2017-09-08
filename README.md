@@ -9,7 +9,7 @@ customizedcast推送未完全
 ### Android Example
 **ATTENTION** 对照官方文档在info内添加自己所需要的信息,所提供为必须字段
 ```js
-	var Umeng = require('umeng-push');
+	var Umeng = require('umeng-push-sdk');
 	var android = new Umeng();
 	android.initialize({
           platform: 'android',
@@ -38,7 +38,7 @@ customizedcast推送未完全
 ### iOS Example
 **ATTENTION** 对照官方文档在info内添加自己所需要的信息,所提供为必须字段
 ```js
-	var Umeng = require('umeng-push');
+	var Umeng = require('umeng-push-sdk');
 	var ios = new Umeng();
 	ios.initialize({
         platform: 'ios',
@@ -61,7 +61,7 @@ customizedcast推送未完全
 ### fileUpload
 **文件上传接口**
 ```js
-	var Umeng = require('umeng-push');
+	var Umeng = require('umeng-push-sdk');
 	var file = new Umeng();
 	file.initialize({
           appKey: config.umeng.android.appKey,

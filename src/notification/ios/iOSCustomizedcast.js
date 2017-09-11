@@ -14,3 +14,6 @@ var iOSCustomizedcast = class iOSCustomizedcast extends iOSNotification{
         this._data['alias_type'] = type
     }
 }
+
+module.exports = iOSCustomizedcast
+
